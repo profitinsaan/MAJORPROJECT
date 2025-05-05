@@ -1,0 +1,73 @@
+<style>
+  .btn-search{
+    background-color: #fe424d;
+    color: white;
+    padding: 0 1rem 0 1rem;
+    border-radius: 25px;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color: white;
+  }
+  .btn-search i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-input{
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    border-radius: 25px;
+  }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Side Links -->
+      <ul class="navbar-nav">
+
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">explore</a>
+        </li>
+        
+      </ul>
+      <div class="nav-item ms-auto">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search Destination" >
+          <button class="btn  btn-search " type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+    </div>
+
+      <!-- Right Side User Auth Links -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Add New Airbnb</a>
+        </li>
+        <% if (typeof currUser === 'undefined' || !currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login"><b>Login</b></a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout"><b>Logout</b></a>
+          </li>
+        <% } %>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

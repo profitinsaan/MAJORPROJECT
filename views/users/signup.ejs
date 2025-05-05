@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<style>
+    .theme-color {
+        color: #fe424d;
+    }
+
+    .btn-theme {
+        background-color: #fe424d;
+        color: white;
+        border: none;
+    }
+
+    .btn-theme:hover {
+        background-color: #e53b44;
+    }
+
+    .form-container {
+        border: 1px solid #dee2e6;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-label {
+        font-weight: 500;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card form-container">
+                <div class="card-body p-4">
+                    <h2 class="mb-4 text-center theme-color">Create Your Roamify Account</h2>
+                    <form action="/signup" method="post" class="needs-validation" novalidate>
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" name="username" id="username" class="form-control" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-theme btn-lg">Sign Up</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <small>Already have an account? <a href="/login" class="text-decoration-none theme-color">Log in</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

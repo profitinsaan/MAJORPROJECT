@@ -1,0 +1,77 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST"  novalidate  class="needs-validation" enctype="multipart/form-data">
+        <div class="row offset-2">
+            <h1>Edit Listing</h1>
+            <div class="col-8">
+                <!-- Title Field -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="listing[title]" value="<%= listing.title %>" required class="form-control">
+                    <div class="invalid-feedback">
+                        Enter title please.
+                    </div>
+                </div>
+
+                <!-- Description Field -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="listing[description]" required class="form-control"><%= listing.description %></textarea>
+                    <div class="invalid-feedback">
+                        Enter description please.
+                    </div>
+                </div>
+
+                
+                <!-- Image preview for edit page -->
+                <div class="mb-3">
+                    Original Listing image <br/>
+                    <img src="<%=originalImageUrl%>" alt=""/>
+                </div>
+
+
+                <!-- Image Link Field -->
+                <div class="mb-3">
+                    <label for="filename" class="form-label">Upload New image</label>
+                    <input type="file" id="filename" name="listing[image][url]" class="form-control">
+                
+                </div>
+
+                <!-- Price and Country Fields (Row Layout) -->
+                <div class="row mb-3">
+                    <!-- Price Field -->
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" id="price" name="listing[price]" value="<%= listing.price %>" required class="form-control">
+                        <div class="invalid-feedback">
+                            Enter valid price.
+                        </div>
+                    </div>
+
+                    <!-- Country Field -->
+                    <div class="col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" id="country" name="listing[country]" value="<%= listing.country %>" required class="form-control">
+                        <div class="invalid-feedback">
+                            country name should be valid.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Field -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" id="location" name="listing[location]" value="<%= listing.location %>" required class="form-control">
+                    <div class="invalid-feedback">
+                        Enter valid location.
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script src="/js/script.js"></script>
+</body>
